@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>80</y>
+      <x>370</x>
+      <y>70</y>
       <w>190</w>
       <h>30</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>290</x>
-      <y>180</y>
+      <x>380</x>
+      <y>140</y>
       <w>210</w>
       <h>160</h>
     </coordinates>
@@ -37,13 +37,13 @@ _Account_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>630</x>
-      <y>180</y>
+      <x>720</x>
+      <y>130</y>
       <w>210</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>
-_Server_
+_Services_
 
 --
 -id: Long 
@@ -56,24 +56,24 @@ _Server_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>490</x>
-      <y>250</y>
+      <x>580</x>
+      <y>200</y>
       <w>160</w>
-      <h>50</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=1
 m2= *
 Has &gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
+    <additional_attributes>10.0;30.0;140.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
       <x>10</x>
       <y>20</y>
-      <w>840</w>
-      <h>440</h>
+      <w>990</w>
+      <h>430</h>
     </coordinates>
     <panel_attributes>Nimbus.io</panel_attributes>
     <additional_attributes/>
@@ -81,19 +81,19 @@ Has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>370</x>
-      <y>100</y>
-      <w>50</w>
-      <h>100</h>
+      <x>430</x>
+      <y>90</y>
+      <w>80</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>30.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>60.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>170</y>
+      <x>40</x>
+      <y>110</y>
       <w>230</w>
       <h>220</h>
     </coordinates>
@@ -115,12 +115,13 @@ Android Activity::Gui Elements
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
-      <y>260</y>
-      <w>70</w>
-      <h>40</h>
+      <x>260</x>
+      <y>210</y>
+      <w>140</w>
+      <h>60</h>
     </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;20.0;50.0;20.0</additional_attributes>
+    <panel_attributes>m1=*
+m2= 1</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;30.0</additional_attributes>
   </element>
 </diagram>
