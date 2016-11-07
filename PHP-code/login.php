@@ -1,16 +1,28 @@
-
-
-<?php 
-require "conn.php";
-$user_name = $_POST["user_name"];
-$user_pass = $_POST["password"];
-$mysql_qry = "select * from userlogin where username like '$user_name' and password like '$user_pass';";
-$result = mysqli_query($conn ,$mysql_qry);
-if(mysqli_num_rows($result) > 0) {
-echo "login success !!!!! Welcome user";
-}
-else {
-echo "login not success";
-}
-
+<?php
+	require "conn.php";
+    echo 'test';
+    echo $user_name;
+	if($preparedQuery = $conn->prepare('SELECT password FROM userlogin WHERE username=?')){
+		$preparedQuery->bind_param('s', $user_name);  //'?' from above query becomes $account
+		$preparedQuery->execute();  //send the query to db
+		$preparedQuery->bind_result($user_pass);  //the result of the query can
+												//ONLY be placed in $user_data, which needs to be shared between all activities
+		
+        //get result of query
+		if($preparedQuery->fetch()){
+			//fetch was good, do the displays
+			//Test passwords
+            if($user_pass == $password)
+			    echo 'login success !!!!! Welcome ' . $user_name;
+            else{
+                //User exists, but wrong pass
+                echo 'Request Refused: Please check username or password and try again';
+            }
+		}
+		else{
+			//input was good, but record does not exist in db
+			echo 'Request Refused: Please check your username or password and try again';
+		}
+		$preparedQuery->close();    //secure close
+    }
 ?>
