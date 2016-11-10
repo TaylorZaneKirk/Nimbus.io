@@ -15,7 +15,7 @@
             echo 'Row inserted';
     }
     else{
-        "Error: ".$conn->error;
+        echo "Error: ".$conn->error;
     }
     $conn.close();
 ?>
