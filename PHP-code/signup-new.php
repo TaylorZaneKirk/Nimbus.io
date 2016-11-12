@@ -8,8 +8,10 @@
     $uemail = $_POST["user_email"];
     $uphone = $_POST["user_phone"];
 
-    //check if there is already an account associated with specified username or email
-    if($preparedQuery = $conn->prepare('SELECT * FROM nimbusiouser WHERE username=? OR email=?')){
+    if(!(filter_var($uemail, FILTER_VALIDATE_EMAIL))){
+        echo 'Not a valid email';
+    } //check if there is already an account associated with specified username or email
+    else if($preparedQuery = $conn->prepare('SELECT * FROM nimbusiouser WHERE username=? OR email=?')){
         $preparedQuery->bind_param('ss', $uname, $uemail);
         $preparedQuery->execute();
 
