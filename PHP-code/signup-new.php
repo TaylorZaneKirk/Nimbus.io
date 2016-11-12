@@ -9,10 +9,9 @@
     $uphone = $_POST["user_phone"];
 
     //check if there is already an account associated with specified username or email
-    if($preparedQuery = $conn->prepare('SELECT * FROM numbusiouser WHERE username=? OR email=?')){
+    if($preparedQuery = $conn->prepare('SELECT * FROM nimbusiouser WHERE username=? OR email=?')){
         $preparedQuery->bind_param('ss', $uname, $uemail);
         $preparedQuery->execute();
-        $preparedQuery->bind_result($matches);
 
         if($preparedQuery->fetch()){
             //match found, refuse
@@ -24,13 +23,15 @@
                 $preparedQuery->bind_param('ssssss', $uname, $fname, $lname, $upass, $uemail, $uphone); 
                 $preparedQuery->execute();
 
-                echo 'Row inserted';
+                echo 'Account Created!';
             }
             else{
                 echo "Error: ".$conn->error;
             }
         }
+        $preparedQuery->close();
     }
-    
-    $conn.close();
+    else{
+        echo "Error: ".$conn->error;
+    }
 ?>
