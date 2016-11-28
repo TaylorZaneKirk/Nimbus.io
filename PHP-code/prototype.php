@@ -17,7 +17,7 @@
 
                 if($preparedQuery->fetch()){
                     $result = array();
-                    array_push($result, array("serverName"=>$r_serverName, "serverDesc"=>$r_serverDesc, "serverRam"=>$r_serverRAM, "serverProc"=>$r_serverProc, "serverSpace"=>$r_serverSpace));
+                    array_push($result, array("ipAddress"=>$r_ipAddress, "serverName"=>$r_serverName, "serverDesc"=>$r_serverDesc, "serverRam"=>$r_serverRAM, "serverProc"=>$r_serverProc, "serverSpace"=>$r_serverSpace));
                     echo json_encode(array("result"=>$result));
                 }
              }
