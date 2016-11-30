@@ -3,29 +3,34 @@
 
     $uid = $_GET['uid'];
 
-    if($preparedQuery = $conn->prepare('SELECT ipAddress, serverType FROM serverTable WHERE uid=?')){
+    if($preparedQuery = $conn->prepare('SELECT IPaddress, serverid FROM userservers WHERE uid=?')){
         
         $preparedQuery->bind_param('i', $uid);
         $preparedQuery->execute();
-        $preparedQuery->bind_result($r_ipAddress, $r_serverType);
+        $preparedQuery->store_result();
+        $preparedQuery->bind_result($r_IPaddress, $r_serverid);
         if($preparedQuery->fetch()){
 
-            if($preparedQuery = $conn->prepare('SELECT serverName, serverDesc, serverRAM, serverProc, serverSpace FROM servicesTable WHERE serverType=?')){
-                $preparedQuery->bind_param('i', $r_serverType);
-                $preparedQuery->execute();
-                $preparedQuery->bind_result($r_serverName, $r_serverDesc, $r_serverRAM, $r_serverProc, $r_serverSpace);
+            if($preparedQuery2 = $conn->prepare('SELECT servicename, servicedesc, serviceprice, Memory, Processor, Storage FROM nimbusioservices WHERE serviceid=?')){
+                $preparedQuery2->bind_param('i', $r_serverid);
+                $preparedQuery2->execute();
+                $preparedQuery2->bind_result($r_servicename, $r_servicedesc, $r_serviceprice, $r_Memory, $r_Processor, $r_Storage);
 
-                if($preparedQuery->fetch()){
+                if($preparedQuery2->fetch()){
                     $result = array();
-                    array_push($result, array("ipAddress"=>$r_ipAddress, "serverName"=>$r_serverName, "serverDesc"=>$r_serverDesc, "serverRam"=>$r_serverRAM, "serverProc"=>$r_serverProc, "serverSpace"=>$r_serverSpace));
+                    array_push($result, array("IPaddress"=>$r_IPaddress, "serviceid"=>$r_serverid, "servicename"=>$r_servicename, "servicedesc"=>$r_servicedesc, "serviceprice"=>$r_serviceprice, "Memory"=>$r_Memory, "Processor"=>$r_Processor, "Storage"=>$r_Storage));
                     echo json_encode(array("result"=>$result));
                 }
+                $preparedQuery2->close();
+             }
+             else{
+                 echo "error: services call error";
              }
         }
         else{
             echo "error: Record does not exist.";
         }
-    }
 
-    $preparedQuery->close();
+        $preparedQuery->close();
+    }
 ?>
