@@ -9,7 +9,7 @@
         $preparedQuery->execute();
         $preparedQuery->store_result();
         $preparedQuery->bind_result($r_IPaddress, $r_serverid);
-        if($preparedQuery->fetch()){
+        while($preparedQuery->fetch()){
 
             if($preparedQuery2 = $conn->prepare('SELECT servicename, servicedesc, serviceprice, Memory, Processor, Storage FROM nimbusioservices WHERE serviceid=?')){
                 $preparedQuery2->bind_param('i', $r_serverid);
@@ -26,9 +26,6 @@
              else{
                  echo "error: services call error";
              }
-        }
-        else{
-            echo "error: Record does not exist.";
         }
 
         $preparedQuery->close();
