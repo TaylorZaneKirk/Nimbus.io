@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">NimbusIO</string>
+    <string name="fn">First Name</string>
+    <string name="ln">Last Name</string>
+    <string name="pass">Password</string>
+    <string name="ea">Email Address</string>
+    <string name="ph">Phone</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string-array name="Memory">
+        <item>256</item>
+        <item>512</item>
+        <item>1024</item>
+        <item>2048</item>
+        <item>4096</item>
+        <item>8192</item>
+    </string-array>
+    <string-array name="Storage">
+        <item>10240</item>
+        <item>20480</item>
+        <item>40960</item>
+        <item>81920</item>
+        <item>163840</item>
+    </string-array>
+    <string-array name="Processor">
+        <item>AMD A8-7670K</item>
+        <item>Intel Xeon E5-2670</item>
+        <item>Intel Core i3-6100</item>
+        <item>AMD Sempron 3850</item>
+        <item>Intel Core i7-6700K</item>
+        <item>AMD FX-8320E</item>
+    </string-array>
+</resources>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    <LinearLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        >
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/fn"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/firstname" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/ln"
+        android:ems="10"
+        android:id="@+id/lastname"
+        android:layout_below="@+id/firstname"
+        android:layout_alignStart="@+id/firstname"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Enter username"
+        android:ems="10"
+        android:id="@+id/username_signup"
+        android:layout_below="@+id/lastname"
+        android:layout_alignStart="@+id/lastname"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/sign_up_pass"
+        android:layout_below="@+id/username_signup"
+        android:layout_alignStart="@+id/username_signup"
+        android:layout_marginTop="10dp"
+        android:hint="Enter Password" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/sign_up_pass"
+        android:layout_alignStart="@+id/sign_up_pass"
+        android:id="@+id/confirmPassword"
+        android:layout_marginTop="10dp"
+        android:hint="Confirm Password"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_below="@+id/confirmPassword"
+        android:layout_alignStart="@+id/confirmPassword"
+        android:layout_marginTop="10dp"
+        android:id="@+id/emailaddress"
+        android:hint="@string/ea" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:layout_below="@+id/emailaddress"
+        android:layout_alignStart="@+id/emailaddress"
+        android:layout_marginTop="10dp"
+        android:id="@+id/phonenumber"
+        android:hint="@string/ph" />
+
+
+
+    <Button
+        android:text="Sign Up"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"
+        android:id="@+id/signupconfirm"
+        android:onClick="buttonSignup"/>
+    </LinearLayout>
+</ScrollView>
+</RelativeLayout>
