@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>370</x>
-      <y>70</y>
+      <x>420</x>
+      <y>60</y>
       <w>190</w>
       <h>30</h>
     </coordinates>
@@ -16,17 +16,18 @@
     <id>UMLClass</id>
     <coordinates>
       <x>380</x>
-      <y>140</y>
+      <y>130</y>
       <w>210</w>
       <h>160</h>
     </coordinates>
     <panel_attributes>
-_Account_
+_User_
 
 --
--id: int
--name: String
--Credit Card: String
+-Uid: int
+-firstname: String
+-Lastname: String
+-Password
 ...
 --
 #Update Account()
@@ -59,13 +60,13 @@ _Services_
       <x>580</x>
       <y>200</y>
       <w>160</w>
-      <h>60</h>
+      <h>50</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=1
+m1=*
 m2= *
-Has &gt;</panel_attributes>
-    <additional_attributes>10.0;30.0;140.0;20.0</additional_attributes>
+Have &gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;140.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLPackage</id>
@@ -73,7 +74,7 @@ Has &gt;</panel_attributes>
       <x>10</x>
       <y>20</y>
       <w>990</w>
-      <h>430</h>
+      <h>710</h>
     </coordinates>
     <panel_attributes>Nimbus.io</panel_attributes>
     <additional_attributes/>
@@ -81,19 +82,19 @@ Has &gt;</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>430</x>
-      <y>90</y>
-      <w>80</w>
+      <x>480</x>
+      <y>80</y>
+      <w>30</w>
       <h>70</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>60.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>40</x>
-      <y>110</y>
+      <y>120</y>
       <w>230</w>
       <h>220</h>
     </coordinates>
@@ -116,12 +117,47 @@ Android Activity::Gui Elements
     <id>Relation</id>
     <coordinates>
       <x>260</x>
-      <y>210</y>
+      <y>220</y>
       <w>140</w>
-      <h>60</h>
+      <h>40</h>
     </coordinates>
     <panel_attributes>m1=*
 m2= 1</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;30.0</additional_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>430</y>
+      <w>210</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>
+_Payment_
+
+--
+-Uid: int
+-Card Number
+-Name on Card
+-Exp 
+...
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>280</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2= *
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
   </element>
 </diagram>

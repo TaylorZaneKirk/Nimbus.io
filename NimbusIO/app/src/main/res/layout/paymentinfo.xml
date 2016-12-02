@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="Payment Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView2"
+        android:textSize="24sp" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+    <LinearLayout
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:text="Card number:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="39dp"
+            android:id="@+id/cnumber"
+            android:textSize="22sp"
+            android:layout_marginStart="0dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignParentStart="true"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etcnumber"
+            android:textSize="22sp"
+            android:hint="Enter your card number" />
+
+        <TextView
+        android:text="Name on Card:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cnumber"
+        android:layout_alignStart="@+id/cnumber"
+        android:layout_marginTop="20dp"
+        android:id="@+id/cname"
+        android:textSize="22sp"
+        android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etcname"
+            android:textSize="22sp"
+            android:hint="Enter Name on card here" />
+
+        <TextView
+            android:text="Expiration Date:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cname"
+            android:layout_alignStart="@+id/cnumber"
+            android:layout_marginTop="20dp"
+            android:id="@+id/expdate"
+            android:textSize="22sp"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/etcexp"
+            android:hint="mm/yyyy" />
+
+        <TextView
+            android:text="Card issuer:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/expdate"
+            android:layout_alignStart="@+id/cnumber"
+            android:layout_marginTop="20dp"
+            android:id="@+id/cissued"
+            android:textSize="22sp"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etcissuer"
+            android:hint="Visa/Mastercard/AMEX" />
+
+        <TextView
+            android:text="Security Code:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cissued"
+            android:layout_alignStart="@+id/cnumber"
+            android:layout_marginTop="20dp"
+            android:id="@+id/csecurity"
+            android:textSize="22sp"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etcsecurity"
+            android:hint="Security Code / CVV" />
+
+        <TextView
+            android:text="Address Line1:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/csecurity"
+            android:layout_alignStart="@+id/cnumber"
+            android:layout_marginTop="20dp"
+            android:id="@+id/uaddress1"
+            android:textSize="22sp"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/etaddress1"
+            android:hint="Street Address, APT/House number" />
+
+        <TextView
+            android:text="Address Line2:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uaddress1"
+            android:layout_alignStart="@+id/cnumber"
+            android:layout_marginTop="20dp"
+            android:id="@+id/uaddress2"
+            android:textSize="22sp"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPostalAddress"
+            android:ems="10"
+            android:id="@+id/etaddress2"
+            android:hint="City, State." />
+
+        <TextView
+            android:text="Zipcode:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uaddress2"
+            android:layout_alignStart="@+id/cnumber"
+            android:layout_marginTop="20dp"
+            android:id="@+id/uzip"
+            android:textSize="22sp"
+            android:textColor="#ff000000" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etzipcode"
+            android:hint="Zipcode" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:id="@+id/payment"
+            android:text="Update card"
+            android:onClick="updateCard"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
