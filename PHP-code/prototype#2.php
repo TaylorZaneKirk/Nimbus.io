@@ -2,8 +2,6 @@
     require "conn.php";
 
     $uid = $_GET['uid'];
-    //$IPaddress = $_GET['IPaddress'];
-    //$serviceid = $_GET['serviceid'];
     $servicename = $_GET['servicename'];
     $servicedesc = $_GET['servicedesc'];
     $serviceprice = 4.99;
@@ -11,12 +9,6 @@
     $Processor = $_GET['Processor'];
     $Storage = $_GET['Storage'];
 
-    $uid = 2;
-    $servicename = "blah";
-    $servicedesc = "test";
-    $Memory = 512;
-    $Processor = "Xenon";
-    $Storage = 10000;
 
     //generate a random IPaddress string
     $IPaddress = "".mt_rand(0,255).".".mt_rand(0,255).".".mt_rand(0,255).".".mt_rand(0,255);
@@ -39,7 +31,6 @@
         $preparedQuery4->execute();
         $preparedQuery4->store_result();
         $preparedQuery4->close();
-        echo "test1";
     }
     
     //User just bought a server, add their server to userservers
@@ -55,6 +46,5 @@
         //  the new serviceid
         $preparedQuery->store_result();
         $preparedQuery->close();
-        echo "Test2 " . $IPaddress . " " . $serviceid;    
     }
 ?>
