@@ -30,12 +30,8 @@
         else{
             if($preparedQuery3 = $conn->prepare('INSERT into nimbusiouserpayment (uid, cardnumber, nameoncard, expdate, ccissuer, cvv, addressl1, addressl2, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')){
                 $preparedQuery3->bind_param('iisssissi', $ccuid, $ccn, $ccun, $cced, $cci, $cccvv, $ccadd1, $ccadd2, $cczip); 
-                if($preparedQuery3->execute()){
-                    echo 'Card Added!';
-                }
-                else{
-                    echo "Error: ".$conn->error;
-                }
+                $preparedQuery3->execute();
+                echo 'Card Added!';
             }
             else{
                 echo "Error: ".$conn->error;
