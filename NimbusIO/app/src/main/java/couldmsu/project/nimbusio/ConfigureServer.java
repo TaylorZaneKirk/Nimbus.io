@@ -39,7 +39,10 @@ public class ConfigureServer extends AppCompatActivity {
         sservername = servername.getText().toString();
         sserverdesc = serverdesc.getText().toString();
 
-        Toast.makeText(ConfigureServer.this, uid+" --- "+smemory+" "+sstorage+" "+sprocessor,Toast.LENGTH_LONG).show();
+        BgWorkerConfigureServer bgWorkerConfigureServer = new BgWorkerConfigureServer(this);
+        bgWorkerConfigureServer.execute("addCustom", sservername, sserverdesc, uid, smemory, sstorage, sprocessor);
+
+        //Toast.makeText(ConfigureServer.this, "Service has been registered with your account.",Toast.LENGTH_LONG).show();
     }
 
 }

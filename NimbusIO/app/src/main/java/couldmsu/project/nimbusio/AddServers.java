@@ -21,6 +21,7 @@ public class AddServers extends AppCompatActivity {
 
     public void presetServers(View view){
         Intent startHome = new Intent(this, PresetServersList.class);
+        startHome.putExtra("uid", uid);
         startActivity(startHome);
     }
 

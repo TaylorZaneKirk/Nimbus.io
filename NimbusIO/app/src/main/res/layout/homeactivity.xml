@@ -101,6 +101,26 @@
         android:id="@+id/pinsert"
         android:textSize="22sp" />
 
+    <TextView
+        android:text="Balance $:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phome"
+        android:layout_alignStart="@+id/ehome"
+        android:layout_marginTop="30dp"
+        android:id="@+id/balance"
+        android:textSize="22sp"
+        android:textColor="#ff000000" />
+
+    <TextView
+        android:text="balance_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/balance"
+        android:layout_alignStart="@+id/einsert"
+        android:id="@+id/binsert"
+        android:textSize="22sp" />
+
 </RelativeLayout>
 
     <ListView

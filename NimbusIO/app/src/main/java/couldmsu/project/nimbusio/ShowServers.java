@@ -95,10 +95,10 @@ public class ShowServers extends AppCompatActivity {
 
                 HashMap<String, String> server = new HashMap<>();
 
-                server.put("name",servername);
-                server.put("ipaddress",ipaddress);
-                server.put("description",serverdesc);
-                server.put("price",serverprice);
+                server.put("name","Server Name: " +servername);
+                server.put("ipaddress", "Server IP: " +ipaddress);
+                server.put("description", "Software Stack: " +serverdesc);
+                server.put("price", "Price: " +serverprice);
 
                 serverList.add(server);
             }
@@ -106,21 +106,19 @@ public class ShowServers extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        ListAdapter adapter = new SimpleAdapter(
-                ShowServers.this, serverList,
-                R.layout.serverlist, new String[]{"name", "ipaddress",
-                "description", "price"}, new int[]{R.id.servicename,
-                R.id.serviceip, R.id.servicedesc, R.id.serviceprice});
-
-        serverlv.setAdapter(adapter);
-
         if (serverid != "null") {
+            ListAdapter adapter = new SimpleAdapter(
+                    ShowServers.this, serverList,
+                    R.layout.serverlist, new String[]{"name", "ipaddress",
+                    "description", "price"}, new int[]{R.id.servicename,
+                    R.id.serviceip, R.id.servicedesc, R.id.serviceprice});
 
-
+            serverlv.setAdapter(adapter);
         }
         else
         {
-            Toast.makeText(ShowServers.this,"Enter your card details",Toast.LENGTH_LONG).show();
+            Toast.makeText(ShowServers.this, "You do not have any servers added.",Toast.LENGTH_LONG).show();
+            Toast.makeText(ShowServers.this, "Go back to add servers.",Toast.LENGTH_LONG).show();
         }
 
     }

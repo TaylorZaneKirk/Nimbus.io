@@ -11,5 +11,6 @@ public class Config {
     public static final String KEY_LNAME = "lastname";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_PHONE = "phone";
+    public static final String KEY_BALANCE = "balance";
     public static final String JSON_ARRAY = "result";
 }

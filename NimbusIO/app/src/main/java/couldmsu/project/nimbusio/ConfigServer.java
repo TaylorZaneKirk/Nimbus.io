@@ -6,6 +6,7 @@ package couldmsu.project.nimbusio;
 
 public class ConfigServer {
     public static final String DATA_URL = "http://104.236.47.53/showservers.php?uid=";
+    public static final String DATA_URL1 = "http://104.236.47.53/presetserverlist.php";
     public static final String KEY_IPA = "IPaddress";     // credit card number
     public static final String KEY_SNAME = "servicename";  // cc user name
     public static final String KEY_SDESC = "servicedesc";   // cc expiration date

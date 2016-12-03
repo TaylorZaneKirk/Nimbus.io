@@ -46,7 +46,7 @@ public class Home extends AppCompatActivity {
     public static String username;
     String uid = "";
 
-    public TextView fn,ln, em, ph;
+    public TextView fn,ln, em, ph, bl;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,6 +58,7 @@ public class Home extends AppCompatActivity {
         ln = (TextView) findViewById(R.id.lninsert);
         em = (TextView) findViewById(R.id.einsert);
         ph = (TextView) findViewById(R.id.pinsert);
+        bl = (TextView) findViewById(R.id.binsert);
 
         //Toast.makeText(Home.this, username, Toast.LENGTH_SHORT).show();
 
@@ -102,6 +103,7 @@ public class Home extends AppCompatActivity {
         String lname="";
         String email="";
         String phone = "";
+        String balance = "";
 
         try {
             JSONObject jsonObject = new JSONObject(response);
@@ -112,6 +114,7 @@ public class Home extends AppCompatActivity {
             lname = accData.getString(Config.KEY_LNAME);
             email = accData.getString(Config.KEY_EMAIL);
             phone = accData.getString(Config.KEY_PHONE);
+            balance = accData.getString(Config.KEY_BALANCE);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -120,6 +123,7 @@ public class Home extends AppCompatActivity {
         ln.setText(lname);
         em.setText(email);
         ph.setText(phone);
+        bl.setText(balance);
     }
 
     private void addDrawerItems() {
@@ -131,8 +135,8 @@ public class Home extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int selectedPosition = position;
-                String ts = Integer.toString(selectedPosition);
-                Toast.makeText(Home.this, ts, Toast.LENGTH_SHORT).show();
+                //String ts = Integer.toString(selectedPosition);
+                //Toast.makeText(Home.this, ts, Toast.LENGTH_SHORT).show();
                 if (selectedPosition == 0){
                     showHome(view);
                 }
