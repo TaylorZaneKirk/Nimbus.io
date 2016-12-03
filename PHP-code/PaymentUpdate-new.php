@@ -11,30 +11,32 @@
     $ccadd2 = $_POST["cc_add2"];
     $cczip = $_POST["cc_zip"];
 
-    if($preparedQuery = $conn->prepare('SELECT * FROM nimbusiouserpayment WHERE uid=? AND cardnumber=?')){
-        $preparedQuery->bind_param('ii', $ccuid, $ccn);
+    if($preparedQuery = $conn->prepare('SELECT * FROM nimbusiouserpayment WHERE uid=?')){
+        $preparedQuery->bind_param('i', $ccuid);
         $preparedQuery->execute();
 
         if($preparedQuery->fetch()){
-            //match found, refuse
-            echo 'Error: This card already exists!';
-        }
-        else{
-             if($preparedQuery = $conn->prepare('INSERT into nimbusiouserpayment (uid, cardnumber, nameoncard, expdate, ccissuer, cvv, addressl1, addressl2, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')){
-                $preparedQuery->bind_param('iisssissi', $ccuid, $ccn, $ccun, $cced, $cci, $cccvv, $ccadd1, $ccadd2, $cczip); 
-                if($preparedQuery->execute()){
-                    echo 'Card Added!';
-                }
-                else{
-                    echo "Error: ".$conn->error;
-                }
+            $preparedQuery->close();
+            if($preparedQuery2 = $conn->prepare('UPDATE nimbusiouserpayment SET cardnumber=?, nameoncard=?, expdate=?, ccissuer=?, cvv=?, addressl1=?, addressl2=?, zipcode=? WHERE uid=?')){
+                $preparedQuery2->bind_param('isssissii', $ccn, $ccun, $cced, $cci, $cccvv, $ccadd1, $ccadd2, $cczip, $ccuid);
+                $preparedQuery2->execute();
+                $preparedQuery2->close();
+                echo "Card Updated!";
             }
             else{
                 echo "Error: ".$conn->error;
             }
         }
-        $preparedQuery->close();
+        else{
+            if($preparedQuery3 = $conn->prepare('INSERT into nimbusiouserpayment (uid, cardnumber, nameoncard, expdate, ccissuer, cvv, addressl1, addressl2, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)')){
+                $preparedQuery3->bind_param('iisssissi', $ccuid, $ccn, $ccun, $cced, $cci, $cccvv, $ccadd1, $ccadd2, $cczip); 
+                $preparedQuery3->execute();
+                echo 'Card Added!';
+            }
+            else{
+                echo "Error: ".$conn->error;
+            }
+            $preparedQuery3->close();
+        }
     }
-
-    $conn.close();
 ?>
