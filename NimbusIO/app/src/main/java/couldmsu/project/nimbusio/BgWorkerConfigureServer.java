@@ -19,6 +19,11 @@ import java.net.URLEncoder;
 
 /**
  * Created by VishnuChaitanya on 12/2/2016.
+ * Packages: java.net; java.IO
+ * Description: Class works as background activity to Add custom server Button pushed on ConfigureServer class.
+ * Gets the custom server name, custom server description, User ID, custom memory, custom storage capacity, custom processor from
+ *  the app and connects to the php url. Send all the user information to server through the link. PHP writes to the Database.
+ * Does not get any results to this code.
  */
 
 public class BgWorkerConfigureServer extends AsyncTask <String,Void,String> {

@@ -4,10 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -22,6 +19,12 @@ import java.net.URLEncoder;
 
 /**
  * Created by VishnuChaitanya on 11/12/2016.
+ * Packages: java.net; java.IO
+ * Description: Class works as background activity to Sign Up Button pushed on LoginActivity class.
+ * Gets the first name, last name, username, password, email address, phone number from the app and
+ * connects to the php url. Send all the user information to server through the link. PHP writes to the Database.
+ * gets the response that is echoed on php.
+ * Uses the result to decide on what needs to be done next.
  */
 
 public class BgWorkerSignUp extends AsyncTask<String,Void,String> {
@@ -38,12 +41,12 @@ public class BgWorkerSignUp extends AsyncTask<String,Void,String> {
 
         if(type.equals("register")){
             try {
-                String fn = params[1];
-                String ln = params[2];
-                un = params[3];
-                String up = params[4];
-                String ue = params[5];
-                String uph = params[6];
+                String fn = params[1]; //First name
+                String ln = params[2]; // last name
+                un = params[3];         // Username
+                String up = params[4];  // User password
+                String ue = params[5];  // User email address
+                String uph = params[6]; // User phone number
                 URL url = new URL(register_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -90,7 +93,7 @@ public class BgWorkerSignUp extends AsyncTask<String,Void,String> {
     @Override
     protected void onPostExecute(String result) {
         alertDialog.setMessage(result.toString());
-       // alertDialog.show();
+        //result from php is being used for deciding on what to do next
 
         if(result.equals("Not a valid email")){
 

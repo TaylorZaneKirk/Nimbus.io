@@ -7,6 +7,8 @@ import java.util.TimerTask;
 import android.content.Intent;
 /**
  * Created by VishnuChaitanya on 11/2/2016.
+ * Code for the first screen that launches in the beginning of the application.
+ * Flash screen: Uses Timer from UTIL package to call the next activity from the intent of the current activity.
  */
 
 public class Welcome extends AppCompatActivity {

@@ -19,6 +19,11 @@ import java.net.URLEncoder;
 
 /**
  * Created by VishnuChaitanya on 12/3/2016.
+ * Packages: java.net; java.IO
+ * Description: Class works as background activity to Add custom server Button pushed on AddServers class.
+ * Gets the server id from list showed in PresetServers, gets the user ID from
+ * the app and connects to the php url. Send all the user information to server through the link. PHP writes to the Database.
+ * Does not get any results to this code.
  */
 
 public class BgWorkerAddPreset extends AsyncTask<String,Void,String> {

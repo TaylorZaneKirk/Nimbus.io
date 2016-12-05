@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 /**
  * Created by VishnuChaitanya on 11/3/2016.
+ * Description: Activity that starts when Configure Server button is pressed in Add Servers activity
+ * Displays dropdowns (Spinners) memory, storage, processor and Edit text for server name, server description
+ * Fetches data from the form and stores to a string and passes these strings to BgWorkerConfigureServer.
+ *
  */
 
 public class ConfigureServer extends AppCompatActivity {
@@ -31,7 +35,7 @@ public class ConfigureServer extends AppCompatActivity {
         servername = (EditText) findViewById(R.id.etServerName);
         serverdesc = (EditText) findViewById(R.id.etServerDesc);
     };
-
+    // Method called when Add Server is pushed on Configure Server activity
     public void addCustomServer(View view){
         smemory = memory.getSelectedItem().toString();
         sstorage = storage.getSelectedItem().toString();

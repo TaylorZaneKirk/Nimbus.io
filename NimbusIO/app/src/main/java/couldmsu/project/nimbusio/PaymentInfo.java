@@ -48,7 +48,7 @@ public class PaymentInfo extends AppCompatActivity {
         getPaymentData();
 
     };
-
+// Method that connents to the php and fetches the data in form of JSON object.
     private void getPaymentData() {
 
 
@@ -70,7 +70,7 @@ public class PaymentInfo extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-
+// Method to parse the JSON object and store to a strings.
     private void showJSON(String response){
 
         String ccn= "";
@@ -115,7 +115,7 @@ public class PaymentInfo extends AppCompatActivity {
         }
 
     }
-
+// Method to update the card information.
     public void updateCard(View view){
         uccn= (EditText) findViewById(R.id.etcnumber);
         uccun= (EditText) findViewById(R.id.etcname);

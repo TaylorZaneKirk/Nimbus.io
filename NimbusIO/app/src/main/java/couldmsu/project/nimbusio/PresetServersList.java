@@ -41,7 +41,7 @@ public class PresetServersList extends AppCompatActivity {
 
         getServerList();
     };
-
+// Method to get the server list and store in a string in JSON form
     private void getServerList(){
 
         String url = ConfigPreset.DATA_URL;
@@ -63,7 +63,7 @@ public class PresetServersList extends AppCompatActivity {
         requestQueue.add(stringRequest);
 
     }
-
+// Method to parse JSON and adding to the listview in the activity
     private void showJSON(String response){
 
         String ipaddress= "";

@@ -17,6 +17,11 @@ import java.net.URLEncoder;
 
 /**
  * Created by VishnuChaitanya on 11/25/2016.
+ * Packages: java.net; java.IO
+ * Description: Class works as background activity to Update Payment Button pushed on PaymentInfo class.
+ * Gets the Card number, card user name, expiration date, Issued by, security code, address, zip and user id from the app and
+ * connects to the php url. Send all the user information to server through the link. PHP writes to the Database.
+ * Does not get any results to this code.
  */
 
 public class BgWorkerPaymentUpdate extends AsyncTask<String,Void,String> {
