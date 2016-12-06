@@ -6,8 +6,8 @@
     <coordinates>
       <x>180</x>
       <y>130</y>
-      <w>790</w>
-      <h>670</h>
+      <w>440</w>
+      <h>650</h>
     </coordinates>
     <panel_attributes>Nimbus.I/O
 --
@@ -24,17 +24,6 @@ layer=-1</panel_attributes>
       <h>110</h>
     </coordinates>
     <panel_attributes>User</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLActor</id>
-    <coordinates>
-      <x>1030</x>
-      <y>460</y>
-      <w>60</w>
-      <h>110</h>
-    </coordinates>
-    <panel_attributes>Admin</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -67,24 +56,14 @@ layer=-1</panel_attributes>
       <w>120</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Retrieve Login</panel_attributes>
+    <panel_attributes>lt=.
+Retrieve Login</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>530</x>
-      <y>710</y>
-      <w>120</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Notify </panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>390</x>
+      <x>340</x>
       <y>430</y>
       <w>120</w>
       <h>40</h>
@@ -93,26 +72,15 @@ layer=-1</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLUseCase</id>
-    <coordinates>
-      <x>690</x>
-      <y>340</y>
-      <w>120</w>
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>Update Config</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
       <x>90</x>
       <y>230</y>
       <w>290</w>
-      <h>250</h>
+      <h>240</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;230.0;270.0;10.0</additional_attributes>
+    <additional_attributes>10.0;220.0;270.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -133,7 +101,7 @@ layer=-1</panel_attributes>
       <w>260</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes/>
+    <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;240.0;60.0</additional_attributes>
   </element>
   <element>
@@ -141,54 +109,77 @@ layer=-1</panel_attributes>
     <coordinates>
       <x>90</x>
       <y>440</y>
-      <w>320</w>
+      <w>270</w>
       <h>60</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;40.0;300.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;250.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>340</x>
+      <y>650</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Notify</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>470</y>
+      <w>230</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;200.0;210.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>90</x>
       <y>490</y>
-      <w>460</w>
-      <h>260</h>
+      <w>270</w>
+      <h>190</h>
     </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;440.0;240.0</additional_attributes>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;250.0;170.0</additional_attributes>
   </element>
   <element>
-    <id>Relation</id>
+    <id>UMLActor</id>
     <coordinates>
-      <x>640</x>
-      <y>500</y>
-      <w>410</w>
-      <h>250</h>
+      <x>660</x>
+      <y>410</y>
+      <w>60</w>
+      <h>110</h>
     </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;230.0;390.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>800</x>
-      <y>350</y>
-      <w>250</w>
-      <h>160</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes>10.0;10.0;230.0;140.0</additional_attributes>
+    <panel_attributes>Admin</panel_attributes>
+    <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>500</x>
-      <y>440</y>
-      <w>550</w>
-      <h>80</h>
+      <y>380</y>
+      <w>180</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes/>
-    <additional_attributes>10.0;10.0;530.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;160.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>400</x>
+      <y>360</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Update Database</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
